@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login</title>
+
+
+  <script>
+    nome = prompt("Qual seu nome?");
+    localStorage.setItem("nome", nome);
+
+    if (nome == null || nome == "") {
+      alert("Visitante,seja bem vindo !");
+
+    }
+    else {
+      alert(nome + ",seja bem vindo !");
+    }
+    function validate() {
+      nome;
+      txtUser = document.getElementById("txtUser");
+      senha = document.getElementById("senha");
+
+      if (!txtUser.value) {
+        alert("Usuário em branco,informe um usuário!");
+        txtUser.focus();
+      }
+      else if (!senha.value) {
+        alert("Senha em branco,informe uma senha!");
+        senha.focus();
+      }
+      else if (nome != txtUser.value) {
+        window.location.href = 'areaRestrita.html';
+      }
+      else if (nome == txtUser.value) {
+        window.location.href = 'teste.html';
+      }
+    }
+  </script>
+</head>
+
+<body>
+  <form>
+    <!-- nome -->
+    <label for="txtUser">Usuário: </label>
+    <br>
+    <input type="text" id="txtUser">
+    <br><br>
+
+    <!-- senha-->
+    <label for="senha">Senha: </label>
+    <br>
+    <input type="password" id="senha">
+
+    <br><br>
+    <!-- botões -->
+    <input type="button" value="Enviar" onclick="validate()">
+    <input type="reset" name="limpa" value="Limpar">
+  </form>
+</body>
+
+</html>

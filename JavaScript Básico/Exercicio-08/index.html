@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 08</title>
+    <script>
+       
+        function cadastro() {
+            user1 = {nome: name1.value, senha: senha.value};
+            
+            if (typeof(Storage) != "undefined") {
+                localStorage.setItem("usuario1",JSON.stringify(user1));
+                usuario1 = localStorage.getItem("usuario1");
+                if (!usuario1) 
+                alert("Não existe usuário cadastrado e nem armazenado!");
+            else {
+                usuario1 = JSON.parse(usuario1);
+        
+            }
+            }
+        }
+        
+    
+    </script>
+</head>
+<body>
+    <form>
+        <label for="txtNome">Usuario:</label>
+        <br>
+        <input type="text" name="NOME" id="name1">
+        <br>
+        <label for="txtSenha">Senha:</label>
+        <br>
+        <input type="password" name="SENHA" id="senha">
+        <br><br>
+        <input type="button" value="Cadastrar"  onclick="cadastro();">
+        <input type="reset" value="Limpar" name="limpar" id="limpar">
+
+        <br><br>
+        <a href="./listarUsuario.html">Mostrar usuario cadastrado</a>
+
+    </form>
+</body>
+</html>
+

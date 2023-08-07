@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 03</title>
+    <script>
+
+        nome1=prompt("Qual seu nome completo?");
+        tamanho = 14;
+        
+        if(nome1!=null){
+            document.write(nome1);
+            idCron = setInterval(aumentar,500);
+        }else{
+            document.write("vazio");
+        }
+        function aumentar() {
+            if (tamanho != 40){ 
+            tamanho=tamanho+2;
+            document.body.style.fontSize=tamanho+"px";
+        }else{
+            alert("Tamanho da letra igual a 40px")
+            }
+          
+        }
+        
+       
+    </script>
+</head>
+<body>
+
+</body>
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 02</title>
+    <script>
+        function play() {
+            user1 = name1.value
+            if (user1 != "") {
+                localStorage.setItem("usuario1", JSON.stringify(user1));
+                usuario1 = localStorage.getItem("usuario1");
+            }
+            select = document.querySelector('#number');
+            valor = select.value
+            time = (select.options[valor - 1].text);
+            time1 = time * 1000;
+            setTimeout(mudar, time1);
+
+        }
+        function mudar() {
+            document.getElementById('name1').value = "";
+            usuario1 = JSON.parse(usuario1);
+            document.getElementById('name2').value = usuario1;
+
+        }
+    </script>
+</head>
+
+<body>
+    <form>
+        <input type="text" name="NOME1" id="name1">
+        <br><br>
+        <input type="text" name="NOME2" id="name2">
+        <br><br>
+        <select id="number">
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+            <option value="6">6</option>
+            <option value="7">7</option>
+            <option value="8">8</option>
+            <option value="9">9</option>
+            <option value="10">10</option>
+        </select>
+        <br><br>
+        <input type="button" value="Hello World!" onclick="play()">
+
+    </form>
+</body>
+
+</html>

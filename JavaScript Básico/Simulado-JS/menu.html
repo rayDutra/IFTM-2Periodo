@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 3</title>
+    <style>
+        .externa{
+            width: 1500px;
+            text-align: center;
+            margin: auto;
+        }
+fieldset {
+    border: 5px solid rgb(4, 161, 4);
+    width: 500px;
+    margin: auto;
+    padding: 40px;
+}
+ legend{
+    color:rgb(0, 148, 0);
+    text-align: center;
+    font-size: 25px;
+ }
+
+ span{
+    font-weight: bold;
+   text-align: center;
+    font-size: 48px;
+    color:rgb(0, 148, 0);
+ }
+ input[type="text"]{
+    box-shadow: 0 0 0 0;
+    outline: 0;
+    border-top: 0 none;
+    border-left: 0 none;
+    border-right: 0 none;
+    border-color: rgb(0, 148, 0);
+    width: 60%;
+    outline-offset: 0px;
+ }
+ input[type="button"] {
+    background-color:rgb(0, 148, 0);
+    color:white;
+    border: 0 none;
+    border-radius:5px;
+    display: block;
+    width: 400px;
+    height: 40px;
+    margin: auto;
+   
+}
+
+
+    </style>
+    <script>
+    nome=window.localStorage.getItem("nome");
+    document.getElementById("username").innerHTML = nome ;
+
+    function validar(){
+    window.location.href = 'felinos.html';
+    }
+ function getTextHome() {
+            document.getElementById("txtHome").innerHTML = localStorage.getItem("nome");
+        }
+    </script>
+</head>
+<body  onload="getTextHome()">
+    <div class="externa">  
+         <span id="txtHome"> </span><span>, seja bem-vindo ao jogo dos Felinos!</span><br><br>
+
+       <input type="button" id="cat3" value="Entrar como convidado" onclick="validar()">
+         </fieldset>
+   </div>
+
+</body>
+</html>

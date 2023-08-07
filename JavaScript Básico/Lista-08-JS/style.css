@@ -1,0 +1,12 @@
+
+.errorMsg {
+    color: red;
+    font-size: 10px;
+    font-weight: bold;
+    display: block;
+}
+label {
+    margin-top: 5px;
+    display: inline-block;
+}
+

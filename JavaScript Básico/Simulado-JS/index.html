@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Exercicio 01</title>
+
+    <style>
+        .externa {
+            width: 1550px;
+            padding: 20px;
+            margin: auto;
+        }
+
+        fieldset {
+            border: 5px solid rgb(4, 161, 4);
+            width: 500px;
+            margin: auto;
+            padding: 40px;
+        }
+
+        legend {
+            color: rgb(0, 148, 0);
+            text-align: center;
+            font-size: 25px;
+        }
+
+        label {
+            font-size: 20px;
+            color: rgb(0, 148, 0);
+        }
+
+        input[type="text"] {
+            box-shadow: 0 0 0 0;
+            outline: 0;
+            border-top: 0 none;
+            border-left: 0 none;
+            border-right: 0 none;
+            border-color: rgb(0, 148, 0);
+            font-size: 18px;
+            color: rgb(0, 148, 0);
+            ;
+            width: 60%;
+            outline-offset: 0px;
+        }
+
+        input[type="button"] {
+            display: block;
+            background-color: rgb(0, 148, 0);
+            color: white;
+            border: 0 none;
+            border-radius: 5px;
+            width: 200px;
+            height: 40px;
+            text-align: absolute;
+            margin: auto;
+            margin-top: 10px;
+        }
+    </style>
+    <script>
+        alert("Olá seja bem vindo!!");
+
+
+        function validate() {
+            nome = document.getElementById("txtNome");
+            localStorage.setItem("nome", nome.value);
+         
+            if (nome.value == "") {
+                alert("Não tem nada na caixa!")
+            }
+            else {
+                window.location.href = 'menu.html';
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <form>
+        <div class="externa">
+            <fieldset>
+                <legend>Acesso ao Sistema</legend>
+
+                <label for="txtNome">Nome Completo:</label>
+
+                <input type="text" name="NOME" id="txtNome">
+                <br><br>
+                <input type="button" value="Cadastrar" onclick="validate()">
+            </fieldset>
+        </div>
+    </form>
+</body>
+
+</html>

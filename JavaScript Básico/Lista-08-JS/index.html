@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Exercicio 08</title>
+
+    <style>
+       
+    </style>
+    <script>
+        
+       
+        function validate() {
+            inputs = document.querySelectorAll(".obrigatorio");
+            for (i = 0; i < inputs.length; i++) {
+                if (!inputs[i].value)
+                    document.getElementById(`${inputs[i].name}ERROR`).innerHTML = `${inputs[i].name} está em branco. Tente novamente!`;
+            }
+           
+            function limparMsgError() {
+            document.getElementById("NOMEERROR").innerHTML = '';
+        }
+        }
+       
+    </script>
+</head>
+
+<body>
+    <form>
+    
+    
+        <label for="txtNome">Usuário</label>
+        <br>
+        <input type="text" name="NOME" id="txtNome" onkeypress="limparMsgError()" class="obrigatorio">
+        <span id="NOMEERROR" class="errorMsg"></span>
+       
+        <label for="txtSenha">Senha</label>
+        <br>
+        <input type="password" name="SENHA" id="txtSenha" onkeypress="limparMsgError()" class="obrigatorio">
+        <span id="SENHAERROR" class="errorMsg"></span>
+
+
+        <br>
+        <input type="button" class="cor" value="Cadastrar" onclick="validate()">
+        <input type="reset" class="cor" name="limpa" value="Limpar">
+    </form>
+    <a href="listarUsuario.html">Mostrar usuário cadastrado</a>
+</body>
+
+</html>

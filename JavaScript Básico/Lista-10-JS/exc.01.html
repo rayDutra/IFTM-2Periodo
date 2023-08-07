@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 01</title>
+    <script>
+        function play() {
+            user1 = name1.value;
+            if (user1 != "") {
+                localStorage.setItem("usuario1", JSON.stringify(user1));
+                usuario1 = localStorage.getItem("usuario1");
+            }
+            setTimeout(mudar, 2000);
+
+        }
+        function mudar() {
+            document.getElementById('name1').value = "";
+            usuario1 = JSON.parse(usuario1);
+            document.getElementById('name2').value = usuario1;
+
+        }
+    </script>
+</head>
+
+<body>
+    <form>
+        <input type="text" name="NOME1" id="name1">
+        <br><br>
+        <input type="text" name="NOME2" id="name2">
+        <br><br>
+        <input type="button" value="Hello World!" onclick="play()">
+
+    </form>
+</body>
+
+</html>

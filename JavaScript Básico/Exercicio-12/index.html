@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+       <meta charset="UTF-8">
+       <meta http-equiv="X-UA-Compatible" content="IE=edge">
+       <meta name="viewport" content="width=device-width, initial-scale=1.0">
+       <title>Lista 12</title>
+       <script src="jwifi.js"></script>
+       <script>
+              function validarData() {
+                     var valor = document.getElementById("txtData").value;
+                     var data = /^\d{2}\/\d{2}\/(\d{2}|\d{4})$/;
+                     if (data.test(valor)) {
+                            alert("Padrão válido");
+                     }
+                     else {
+                            alert("Padrão inválido")
+                     }
+              }
+              function validarCpf() {
+                     var valor = document.getElementById("txtCpf").value.trim();
+                     var cpf = /^\d{3}\.\d{3}\.\d{3}\-\d{2}$/;
+                     if (cpf.test(valor)) {
+                            alert("Padrão válido");
+                     }
+                     else {
+                            alert("Padrão inválido")
+                     }
+              }
+              function validarMatricula() {
+                var valor = document.getElementById("txtMatricula").value;
+                     var nummt = /^(I|i)(F|f)(T|t)(M|m)\-\d{3}\/\d{3}\-\w{2}$/;
+                     if (nummt.test(valor)) {
+                            alert("Padrão válido");
+                     }
+                     else {
+                            alert("Padrão inválido")
+                     }
+              }
+              function validarDisciplina() {
+                var valor = document.getElementById("txtDisc").value;
+                var disc = /^MT\-\d{2}\.\d{3}\-IFTM$/i;
+                     if (disc.test(valor)) {
+                            alert("Padrão válido");
+                     }
+                     else {
+                            alert("Padrão inválido")
+                     }
+              }
+              function validarDisciplina02() {
+                var valor = document.getElementById("txtDisc02").value;
+                var disc02= /^MT\-\d{2}\.\d{3}\-(I|i)(F|f)(T|t)(M|m)$/;
+                     if (disc02.test(valor)) {
+                            alert("Padrão válido");
+                     }
+                     else {
+                            alert("Padrão inválido")
+                     }
+              }
+              function validarDisciplina03() {
+                var valor = document.getElementById("txtDisc03").value;
+                var disc03= /^M\s?T\s?\-\d{2}\.\d{3}\-I\s?F\s?T\s?M\s?$/i;
+                     if (disc03.test(valor)) {
+                            alert("Padrão válido");
+                     }
+                     else {
+                            alert("Padrão inválido")
+                     }
+              }
+              function validarDisciplina04() {
+                var valor = document.getElementById("txtDisc04").value;
+                var disc04= /^(M|m)\s?(T|t)\s?\-\d{2}\.\d{3}\-(I|i)\s?(F|f)\s?(T|t)\s?(M|m)\s?(Uberlândia|Uberlândia Centro)$/;
+                     if (disc04.test(valor)) {
+                            alert("Padrão válido");
+                     }
+                     else {
+                            alert("Padrão inválido")
+                     }
+              }
+              function validarCampus() {
+                var valor = document.getElementById("txtCampus").value;
+                var campus= /^(IFTM campus Uberlândia|IFTM campus Uberlândia Centro)$/;
+                     if (campus.test(valor)) {
+                            alert("Padrão válido");
+                     }
+                     else {
+                            alert("Padrão inválido")
+                     }
+              }
+              function validarTel() {
+                var valor = document.getElementById("txtTel").value;
+                var tel= /^\+\d{2}\(\d{2}\)\d{5}-\d{4}$/;
+                     if (tel.test(valor)) {
+                            alert("Padrão válido");
+                     }
+                     else {
+                            alert("Padrão inválido")
+                     }
+              }
+              function validarTel02() {
+                var valor = document.getElementById("txtTel02").value;
+                var tel02= /^\(\d{2,3}\)\d{5}-\d{4}$/;
+                     if (tel02.test(valor)) {
+                            alert("Padrão válido");
+                     }
+                     else {
+                            alert("Padrão inválido")
+                     }
+              }
+              function validarAltura() {
+                var valor = document.getElementById("txtAltura").value;
+                var altura= /^[1-2](\,|\.)[0-9]\d*$/;
+                     if (altura.test(valor)) {
+                            alert("Padrão válido");
+                     }
+                     else {
+                            alert("Padrão inválido")
+                     }
+              }
+              function validarFaturamento() {
+                var valor = document.getElementById("txtFat").value;
+                     
+        valor = valor + '';
+        valor = parseInt(valor.replace(/[\D]+/g, ''));
+        valor = valor + '';
+        valor = valor.replace(/([0-9]{2})$/g, ",R$1");
+
+        if (valor.length > 6) {
+            valor = valor.replace(/([0-9]{3}),([0-9]{2}$)/g, ".R$1,R$2");
+            alert("Padrão válido");
+        }
+       
+                     else {
+                            alert("Padrão inválido")
+                     }
+              }
+              
+              function validaCronometro() {
+                var valor = document.getElementById("txtCron").value;
+                var cron= /^([01]?[0-9]|2[0-3]):[0-5][0-9](:[0-5][0-9]):[0-9][0-9]?$/;
+                     if (cron.test(valor)) {
+                            alert("Padrão válido");
+                     }
+                     else {
+                            alert("Padrão inválido")
+                     }
+              }
+              
+       </script>
+</head>
+<body>
+              <form>
+                     <label>Data Nacimento:</label>
+                     <input type="text" id="txtData" value="05/09/2001">
+                     <input type="button" value="Verificar" onclick="validarData()">
+                     <br><br><br>
+
+                     <label>CPF:</label>
+                     <input type="text" id="txtCpf" value="123.456.789-85" onkeypress="inserirMascara('txtCpf','999.999.999-99')">
+                     <input type="button" value="Verificar" onclick="validarCpf()">
+                     <br><br><br>
+
+                     <label>Matricula:</label>
+                     <input type="text" id="txtMatricula" value="IFTM-123/456-4p">
+                     <input type="button" value="Verificar" onclick="validarMatricula()">
+                     <br><br><br>
+
+                     <label>Disciplina:</label>
+                     <input type="text" id="txtDisc" value="MT-12.456-IFTM" onkeypress="inserirMascara('txtDisc','MT-xx.xxx-IFTM')">
+                     <input type="button" value="Verificar" onclick="validarDisciplina()">
+                     <br><br><br>
+
+                     <label>Disciplina 02:</label>
+                     <input type="text" id="txtDisc02" value="MT-22.222-IFTM" onkeypress="inserirMascara('txtDisc02','MT-xx.xxx-IFTM')">
+                     <input type="button" value="Verificar" onclick="validarDisciplina02()">
+                     <br><br><br>
+
+                     <label>Disciplina 03:</label>
+                     <input type="text" id="txtDisc03" value="M T-22.222-IF TM" >
+                     <input type="button" value="Verificar" onclick="validarDisciplina03()">
+                     <br><br><br>
+
+                     <label>Disciplina 04:</label>
+                     <input type="text" id="txtDisc04" value="m T -12.345-I f TM Uberlândia Centro">
+                     <input type="button" value="Verificar" onclick="validarDisciplina04()">
+                     <br><br><br>
+
+                     <label>Nome do Campus:</label>
+                     <input type="text" id="txtCampus" value="IFTM campus Uberlândia">
+                     <input type="button" value="Verificar" onclick="validarCampus()">
+                     <br><br><br>
+
+                     <label>Telefone:</label>
+                     <input type="text" id="txtTel" value="+55(34)91234-5678" onkeypress="inserirMascara('txtTel','+55(34)91234-5678')">
+                     <input type="button" value="Verificar" onclick="validarTel()">
+                     <br><br><br>
+
+                     <label>Telefone 02:</label>
+                     <input type="text" id="txtTel02" value="(034)91234-5678" onkeypress="inserirMascara('txtTel02','(034)91234-5678')">
+                     <input type="button" value="Verificar" onclick="validarTel02()">
+                     <br><br><br>
+
+                     <label>Altura:</label>
+                     <input type="text" id="txtAltura" value="1,65">
+                     <input type="button" value="Verificar" onclick="validarAltura()">
+                     <br><br><br>
+
+                     <label>Faturamento:</label>
+                     <input type="text" id="txtFat" value="R$10.524.478.967,70">
+                     <input type="button" value="Verificar" onclick="validarFaturamento()">
+                     <br><br><br>
+
+   
+
+              </form>
+</body>
+
+</html>

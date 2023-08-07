@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Jogo dos Emojis</title>
+
+  <style>
+    .cxNmr {
+      border: 1px solid black;
+      width: 30px;
+      height: 20px;
+      text-align: center;
+    }
+  </style>
+  <script>
+    var counterVal = 0;
+    function amor() {
+      document.getElementById("trocarImg").src = "img/amor.jpg";
+      updateDisplay(++counterVal);
+
+    }
+    function alegre() {
+      document.getElementById("trocarImg").src = "img/alegre.jpg";
+      updateDisplay(++counterVal);
+    }
+    function coco() {
+      document.getElementById("trocarImg").src = "img/coco.jpg";
+      updateDisplay(++counterVal);
+    }
+    function updateDisplay(val) {
+      document.getElementById("NUMERO").innerHTML = val;
+    }
+  </script>
+</head>
+
+<body class="corpo">
+  <form>
+    <input type="button" value="amor" onclick="amor()">
+    <input type="button" value="alegre" onclick="alegre()">
+    <input type="button" value="coco" onclick="coco()">
+    <br><br>
+    <div class="cxNmr"><span id="NUMERO" class="errorMsg"></div>
+    <br>
+    <img src="img/branco.png" alt="" id="trocarImg">
+  </form>
+</body>
+
+</html>

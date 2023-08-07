@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Área Restrita</title>
+</head>
+<style>
+  .container {
+    width: 1200px;
+    text-align: center;
+    margin: auto;
+  }
+
+  img {
+    width: 700px;
+    text-align: center;
+  }
+
+  span {
+    color: red;
+  }
+</style>
+<script>
+  nome = window.localStorage.getItem("nome");
+  document.getElementById("username").innerHTML = nome;
+
+  function getTextHome() {
+    document.getElementById("txtHome").innerHTML = localStorage.getItem("nome");
+  }
+</script>
+
+<body onload="getTextHome()">
+  <div class="container">
+    <div><img src="img/areaRestrita.jpg"></div>
+    <div>
+      <h1><span id="txtHome"></span>,você não tem autorização para acessar essa área!</h1>
+    </div>
+  </div>
+</body>
+
+</html>
